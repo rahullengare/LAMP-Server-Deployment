@@ -16,11 +16,14 @@
     - Key pair → pem_server_key
     - security group → launch-wizard-1
 
+![Project Screenshot](/images/LAMP-launch.jpg)
+
 ## Step 2: SSH to connect the EC2 Instance
 
 ```bash
 ssh -i "pem-server-key.pem" ec2-user@ec2-52-2-236-21.compute-1.amazonaws.com
 ```
+![Project Screenshot](/images/connect.jpg)
 
 ## Step 3: Install LAMP in **Amazon Linux**
 
@@ -40,6 +43,7 @@ sudo yum install httpd -y
 sudo systemctl start httpd
 sudo systemctl enable httpd
 ```
+![Project Screenshot](/images/httpd-start-status.jpg)
 
 3. Install MYSQL your LAMP server then Start & enable
 
@@ -51,6 +55,7 @@ sudo yum install mariadb105-server -y
 sudo systemctl start mariadb
 sudo systemctl enable mariadb
 ```
+![Project Screenshot](/images/mysql-start-status.jpg)
 
 4. Install PHP your LAMP server then Start & enable
 
@@ -62,3 +67,15 @@ sudo yum install php -y
 sudo systemctl start php-fpm
 sudo systemctl enable php-fpm
 ```
+![Project Screenshot](/images/php-start-status.jpg)
+
+## Step 4: Terminating Your instance
+
+1. Your use are done then got to AWS console 
+2. Click on EC2 → instance 
+3. Select instance You want to terminated
+4. Click on Instance state 
+5. Choose **Terminate (delete) instance**
+6. Now click delete
+
+![Project Screenshot](/images/delete-instance.jpg)
